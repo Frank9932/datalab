@@ -1,9 +1,8 @@
 import json
 import requests
 
-def mod_load_config(mod_config_path = "mod-config.json") -> dict:
-    if mod_config_path is None:
-        mod_config_path = ""
+def mod_load_config() -> dict:
+    mod_config_path = "mod-config.json"
     try:
        mod_config = json.load(open(mod_config_path))
        print(mod_config)
@@ -12,7 +11,10 @@ def mod_load_config(mod_config_path = "mod-config.json") -> dict:
     return {
        k : mod_config[k] if k in mod_config else ""
        for k in ["tg_token", "chat_id", 
-                 "wallet_dir", "oracle_user", "oracle_password", "dsn", "wallet_location", "wallet_password", "table_name"]
+                 "wallet_dir", "oracle_user", 
+                 "oracle_password", 
+                 "dsn", "wallet_location", 
+                 "wallet_password", "table_name"]
     }
 
 def send_msg(msg,token,chat_id):

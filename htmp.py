@@ -76,5 +76,3 @@ plt.title(htmp_title)
 sns.heatmap(dfhtmp_reordered.T, annot=False, fmt=".6f", vmin = df_min, vmax = df_max, linewidths=.05, cbar_kws={'label': 'Your Colorbar Label'})
 plt.savefig(f"hotmap-{htmp_tmstmp}.png")
 print(f"HOTMAP {yea}-{mon}-{day}-{hour}-{minute}.png SAVED")
-
-
